@@ -2,13 +2,15 @@
 <div id="preloader">
     <div id="status">&nbsp;</div>
 </div>
-<canvas height="900" width="900" style="margin: 0px;" id="canvas"></canvas>
+<div id="canvas-outer">
+    <canvas height="900" width="900" style="margin: 0px;" id="canvas"></canvas>
+</div>
 <div id="page-background">
-  <div class="main-background"> </div>
-  <div class="about-background"></div>
-  <div class="offer-background"></div>
-  <div class="offer-background"></div>
-  <div class="contact-background"></div>
+    <div class="main-background"> </div>
+    <div class="about-background"></div>
+    <div class="offer-background"></div>
+    <div class="blog-background"></div>
+    <div class="contact-background"></div>
 </div>
 <div id="fullpage">
 
@@ -173,13 +175,13 @@ if ( $the_query->have_posts() ) {
 	wp_reset_postdata();
 } }
                 ?>
-                    <div class="fp-controlArrow">
-                        <span>zobacz wszystkie</span>
-                    </div>
-                    <a href="#contact" class="cd-scroll-down"><img src="<?php echo get_template_directory_uri(); ?>/img/scroll-black.png" alt=""></a>
-                    <div class="logo-sm">
-                        <img src="<?php echo get_template_directory_uri(); ?>/img/logo-on-white.png" alt="">
-                    </div>
+                        <div class="fp-controlArrow">
+                            <span>zobacz wszystkie</span>
+                        </div>
+                        <a href="#contact" class="cd-scroll-down"><img src="<?php echo get_template_directory_uri(); ?>/img/scroll-black.png" alt=""></a>
+                        <div class="logo-sm">
+                            <img src="<?php echo get_template_directory_uri(); ?>/img/logo-on-white.png" alt="">
+                        </div>
             </div>
         </div>
         <div class="slide half blog-second fp-noscroll">
@@ -301,4 +303,4 @@ if ( $the_query->have_posts() ) {
             </div>
         </div>
     </section>
-<?php get_footer(); ?>
+    <?php get_footer(); ?>

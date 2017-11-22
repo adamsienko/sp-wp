@@ -400,6 +400,11 @@ html {
                 height: 100vh;
                 position: relative;
             }
+            .blog-background {
+                background: #fff;
+                height: 100vh;
+                position: relative;
+            }
             .contact-background {
                 background: linear-gradient(90deg, #1f59d1 52px, transparent 1%) center, linear-gradient(#1f59d1 52px, transparent 1%) center, #538dd3;
                 background-size: 55px 55px;
@@ -408,19 +413,38 @@ html {
             }
         }
         //    CANVAS
-        canvas {
-            height: 100vh;
+        #canvas-outer {
+            perspective: 1600px;
             position: fixed;
-            top: 0;
             left: 50%;
             transform: translateX(-50%);
-            z-index: 1;
-            pointer-events: none;
-            @media#{$tablet} {
-                font-size: 10vw;
-                height: auto;
-                width: 100vw;
+            top: 0;
+            #canvas {
+                height: 100vh;
+                z-index: 1;
+                pointer-events: none;
+                transform-style: preserve-3d;
+                transform-origin: center center;
+                backface-visibility: visible;
+                transform: rotateX( 0deg);
+                transition: transform 400ms ease;
+                @media#{$tablet} {
+                    font-size: 10vw;
+                    height: auto;
+                    width: 100vw;
+                }
             }
+        }
+        .notransition,
+        .notransition #canvas,
+        .notransition #canvas-outer {
+            transition-duration: 0 !important;
+            transition-delay: 0 !important;
+        }
+        .transition-reset,
+        .transition-reset #canvas,
+        .transition-reset #canvas-outer {
+            transition-duration: 600ms !important;
         }
         .section-inner {
             z-index: 1;
@@ -852,8 +876,9 @@ html {
                     }
                 }
             }
+        }
             /*BLOG - POSTS*/
-            article[id^='post-'] {
+            article.type-post {
                 width: 50%;
                 margin: auto;
                 @media#{$tablet} {
@@ -938,7 +963,7 @@ html {
                         top: 110px;
                     }
                 }
-            }
+            
             /*KONTAKT*/
             #contact1 {
                 color: #fff;

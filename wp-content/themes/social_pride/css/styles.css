@@ -14,7 +14,8 @@ html {
     /* SCROLL PAGE*/
     /*BACKGROUNDS*/
     /*SECTIONS*/
-    /*MAIN*/ }
+    /*MAIN*/
+    /*BLOG - POSTS*/ }
     html body .sidebar {
       position: fixed;
       width: 304px;
@@ -334,25 +335,45 @@ html {
         background-size: 55px 55px;
         height: 100vh;
         position: relative; }
+      html body #page-background .blog-background {
+        background: #fff;
+        height: 100vh;
+        position: relative; }
       html body #page-background .contact-background {
         background: linear-gradient(90deg, #1f59d1 52px, transparent 1%) center, linear-gradient(#1f59d1 52px, transparent 1%) center, #538dd3;
         background-size: 55px 55px;
         height: 100vh;
         position: relative; }
-    html body canvas {
-      height: 100vh;
+    html body #canvas-outer {
+      perspective: 1600px;
       position: fixed;
-      top: 0;
       left: 50%;
       transform: translateX(-50%);
-      z-index: 1;
-      pointer-events: none; }
+      top: 0; }
+      html body #canvas-outer #canvas {
+        height: 100vh;
+        z-index: 1;
+        pointer-events: none;
+        transform-style: preserve-3d;
+        transform-origin: center center;
+        backface-visibility: visible;
+        transform: rotateX(0deg);
+        transition: transform 400ms ease; }
 
 @media only screen and (max-width: 768px) {
-  html body canvas {
+  html body #canvas-outer #canvas {
     font-size: 10vw;
     height: auto;
     width: 100vw; } }
+    html body .notransition,
+    html body .notransition #canvas,
+    html body .notransition #canvas-outer {
+      transition-duration: 0 !important;
+      transition-delay: 0 !important; }
+    html body .transition-reset,
+    html body .transition-reset #canvas,
+    html body .transition-reset #canvas-outer {
+      transition-duration: 600ms !important; }
     html body .section-inner {
       z-index: 1;
       position: relative; }
@@ -379,9 +400,7 @@ html {
       z-index: 1;
       /*ABOUT*/
       /*OFFER*/
-      /*BLOG*/
-      /*BLOG - POSTS*/
-      /*KONTAKT*/ }
+      /*BLOG*/ }
       html body #fullpage #main1 .main-background {
         background: linear-gradient(90deg, #000 52px, transparent 1%) center, linear-gradient(#000 52px, transparent 1%) center, #2b2c31;
         background-size: 55px 55px;
@@ -769,164 +788,165 @@ html {
 @media only screen and (max-width: 992px) {
   html body #fullpage #blog1 .blog-third h2 {
     opacity: 1; } }
-      html body #fullpage article[id^='post-'] {
-        width: 50%;
-        margin: auto; }
+    html body article.type-post {
+      width: 50%;
+      margin: auto;
+      /*KONTAKT*/ }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage article[id^='post-'] {
+  html body article.type-post {
     width: 80%; } }
-        html body #fullpage article[id^='post-'] h1 {
-          color: #1f59d1;
-          padding: 15px;
-          font-family: 'Playfair Display', serif; }
-        html body #fullpage article[id^='post-'] p {
-          color: #000;
-          margin: auto;
-          font-size: 1.1vw;
-          font-family: 'Muli', sans-serif;
-          margin-bottom: 40px;
-          text-align: justify; }
+      html body article.type-post h1 {
+        color: #1f59d1;
+        padding: 15px;
+        font-family: 'Playfair Display', serif; }
+      html body article.type-post p {
+        color: #000;
+        margin: auto;
+        font-size: 1.1vw;
+        font-family: 'Muli', sans-serif;
+        margin-bottom: 40px;
+        text-align: justify; }
 
 @media only screen and (max-width: 992px) {
-  html body #fullpage article[id^='post-'] p {
+  html body article.type-post p {
     font-size: 1.8vw; } }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage article[id^='post-'] p {
+  html body article.type-post p {
     font-size: 11px;
     margin-bottom: 10px; } }
-        html body #fullpage article[id^='post-'] figure {
-          padding-bottom: 20px;
-          margin: auto; }
-          html body #fullpage article[id^='post-'] figure .author-photo {
-            border-radius: 50%;
-            width: 70px;
-            display: inline-block; }
-          html body #fullpage article[id^='post-'] figure figcaption {
+      html body article.type-post figure {
+        padding-bottom: 20px;
+        margin: auto; }
+        html body article.type-post figure .author-photo {
+          border-radius: 50%;
+          width: 70px;
+          display: inline-block; }
+        html body article.type-post figure figcaption {
+          display: inline-block;
+          vertical-align: middle;
+          text-align: left; }
+          html body article.type-post figure figcaption p {
+            color: darkgrey;
             display: inline-block;
             vertical-align: middle;
-            text-align: left; }
-            html body #fullpage article[id^='post-'] figure figcaption p {
-              color: darkgrey;
-              display: inline-block;
-              vertical-align: middle;
-              font-family: 'Muli', sans-serif;
-              font-size: 14px;
-              padding-left: 10px;
-              margin-bottom: 0; }
-        html body #fullpage article[id^='post-'] .the_champ_sharing_container {
-          padding-top: 30px;
-          padding-bottom: 60px; }
-          html body #fullpage article[id^='post-'] .the_champ_sharing_container .the_champ_sharing_title {
-            color: darkgray;
             font-family: 'Muli', sans-serif;
             font-size: 14px;
-            margin-bottom: 10px; }
-          html body #fullpage article[id^='post-'] .the_champ_sharing_container .the_champ_sharing_ul .theChampSharingRound .theChampSharing {
-            margin-left: 33px; }
-        html body #fullpage article[id^='post-'] .blog-post-image {
-          width: 100%;
-          padding-top: 80px; }
-        html body #fullpage article[id^='post-'] .back-from-post {
-          color: #000;
-          font-family: 'Saira Extra Condensed', sans-serif;
-          font-size: 1.35vw;
-          font-weight: 500;
-          padding-bottom: 30px; }
-          html body #fullpage article[id^='post-'] .back-from-post:hover {
-            text-decoration: none; }
-        html body #fullpage article[id^='post-'] .logo-sm img {
-          top: 110px; }
-      html body #fullpage #contact1 {
+            padding-left: 10px;
+            margin-bottom: 0; }
+      html body article.type-post .the_champ_sharing_container {
+        padding-top: 30px;
+        padding-bottom: 60px; }
+        html body article.type-post .the_champ_sharing_container .the_champ_sharing_title {
+          color: darkgray;
+          font-family: 'Muli', sans-serif;
+          font-size: 14px;
+          margin-bottom: 10px; }
+        html body article.type-post .the_champ_sharing_container .the_champ_sharing_ul .theChampSharingRound .theChampSharing {
+          margin-left: 33px; }
+      html body article.type-post .blog-post-image {
+        width: 100%;
+        padding-top: 80px; }
+      html body article.type-post .back-from-post {
+        color: #000;
+        font-family: 'Saira Extra Condensed', sans-serif;
+        font-size: 1.35vw;
+        font-weight: 500;
+        padding-bottom: 30px; }
+        html body article.type-post .back-from-post:hover {
+          text-decoration: none; }
+      html body article.type-post .logo-sm img {
+        top: 110px; }
+      html body article.type-post #contact1 {
         color: #fff;
         font-family: 'Muli', sans-serif; }
-        html body #fullpage #contact1 .contact-background {
+        html body article.type-post #contact1 .contact-background {
           background: linear-gradient(90deg, #1f59d1 52px, transparent 1%) center, linear-gradient(#1f59d1 52px, transparent 1%) center, #538dd3;
           background-size: 55px 55px;
           width: 100%;
           height: 100%;
           position: absolute;
           z-index: -9999; }
-        html body #fullpage #contact1 h2 {
+        html body article.type-post #contact1 h2 {
           color: #fff; }
-        html body #fullpage #contact1 .contact-inner {
+        html body article.type-post #contact1 .contact-inner {
           width: 50%;
           margin: auto;
           padding-top: 20px; }
 
 @media only screen and (max-width: 992px) {
-  html body #fullpage #contact1 .contact-inner {
+  html body article.type-post #contact1 .contact-inner {
     width: 60%; } }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner {
+  html body article.type-post #contact1 .contact-inner {
     width: 80%;
     padding-top: 0; } }
-          html body #fullpage #contact1 .contact-inner .contact-text {
+          html body article.type-post #contact1 .contact-inner .contact-text {
             font-family: 'Playfair Display', serif;
             font-size: 1.1vw; }
 
 @media only screen and (max-width: 992px) {
-  html body #fullpage #contact1 .contact-inner .contact-text {
+  html body article.type-post #contact1 .contact-inner .contact-text {
     font-size: 2.1vw; } }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner .contact-text {
+  html body article.type-post #contact1 .contact-inner .contact-text {
     font-size: 12px; } }
-          html body #fullpage #contact1 .contact-inner .contact-owner {
+          html body article.type-post #contact1 .contact-inner .contact-owner {
             width: 100%;
             padding-top: 50px;
             margin-left: -27px; }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner {
+  html body article.type-post #contact1 .contact-inner .contact-owner {
     margin-left: 0;
     padding-top: 20px; } }
-            html body #fullpage #contact1 .contact-inner .contact-owner .photo {
+            html body article.type-post #contact1 .contact-inner .contact-owner .photo {
               text-align: right; }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner .photo {
+  html body article.type-post #contact1 .contact-inner .contact-owner .photo {
     text-align: center; } }
-            html body #fullpage #contact1 .contact-inner .contact-owner .contact-data {
+            html body article.type-post #contact1 .contact-inner .contact-owner .contact-data {
               text-align: left;
               padding-left: 9px;
               margin-top: -7px; }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner .contact-data {
+  html body article.type-post #contact1 .contact-inner .contact-owner .contact-data {
     text-align: center; } }
-              html body #fullpage #contact1 .contact-inner .contact-owner .contact-data h6 {
+              html body article.type-post #contact1 .contact-inner .contact-owner .contact-data h6 {
                 font-family: 'Saira Extra Condensed', sans-serif;
                 font-weight: 700;
                 font-size: 1.8vw; }
 
 @media only screen and (max-width: 992px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner .contact-data h6 {
+  html body article.type-post #contact1 .contact-inner .contact-owner .contact-data h6 {
     font-size: 2.8vw; } }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner .contact-data h6 {
+  html body article.type-post #contact1 .contact-inner .contact-owner .contact-data h6 {
     font-size: 25px; } }
-              html body #fullpage #contact1 .contact-inner .contact-owner .contact-data p {
+              html body article.type-post #contact1 .contact-inner .contact-owner .contact-data p {
                 font-family: 'Muli', sans-serif;
                 font-size: 1.1vw; }
 
 @media only screen and (max-width: 992px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner .contact-data p {
+  html body article.type-post #contact1 .contact-inner .contact-owner .contact-data p {
     font-size: 1.8vw; } }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 .contact-inner .contact-owner .contact-data p {
+  html body article.type-post #contact1 .contact-inner .contact-owner .contact-data p {
     font-size: 14px; } }
-        html body #fullpage #contact1 address {
+        html body article.type-post #contact1 address {
           padding-top: 40px;
           font-family: 'Muli', sans-serif;
           font-size: 1.1vw;
           margin-bottom: 0; }
 
 @media only screen and (max-width: 768px) {
-  html body #fullpage #contact1 address {
+  html body article.type-post #contact1 address {
     font-size: 14px;
     padding-top: 10px; } }
